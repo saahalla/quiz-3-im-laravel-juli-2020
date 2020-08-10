@@ -12,13 +12,15 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('projects.erd');
 });
-
-Route::get('/items/create', 'ItemController@create'); // menampilkan halaman form
-Route::post('/items', 'ItemController@store'); // menyimpan data
-Route::get('/items', 'ItemController@index'); // menampilkan semua
-Route::get('/items/{id}', 'ItemController@show'); // menampilkan detail item dengan id 
-Route::get('/items/{id}/edit', 'ItemController@edit'); // menampilkan form untuk edit item
-Route::put('/items/{id}', 'ItemController@update'); // menyimpan perubahan dari form edit
-Route::delete('/items/{id}', 'ItemController@destroy'); // menghapus data dengan id
+Route::get('/master', function () {
+    return view('layouts.master');
+});
+Route::get('/proyek/create', 'ProjectController@create'); // menampilkan halaman form
+Route::post('/proyek', 'ProjectController@store'); // menyimpan data
+Route::get('/proyek', 'ProjectController@index'); // menampilkan semua
+Route::get('/proyek/{id}', 'ProjectController@show'); // menampilkan detail item dengan id 
+Route::get('/proyek/{id}/edit', 'ProjectController@edit'); // menampilkan form untuk edit item
+Route::put('/proyek/{id}', 'ProjectController@update'); // menyimpan perubahan dari form edit
+Route::delete('/proyek/{id}', 'ProjectController@destroy'); // menghapus data dengan id
